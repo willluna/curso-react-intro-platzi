@@ -1,11 +1,5 @@
-function TodoList(props) {
-  return (
-    <ul>
-      {props.children.map((child, index) => (
-        <li key={index}>{child}</li>
-      ))}
-    </ul>
-  );
+function TodoList({ children }) {
+  return <ul>{children}</ul>;
 }
 
 export default TodoList;
