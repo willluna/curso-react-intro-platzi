@@ -2,6 +2,8 @@ import React from "react";
 import AppUI from "./AppUI";
 import useLocalStorage from "./CustomHook/useLocalStorage";
 
+// localStorage.removeItem('TODOS_V1');
+
 // const defaultTodos = [
 //   { text: 'Cortar cebolla', completed: true },
 //   { text: 'Tomar el Curso de Intro a React.js', completed: false },
@@ -11,7 +13,6 @@ import useLocalStorage from "./CustomHook/useLocalStorage";
 // ];
 
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('TODOS_V1');
 
 function App() {
   const {
@@ -24,14 +25,6 @@ function App() {
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
-
-  console.log("Log 1");
-
-  React.useEffect(() => {
-    console.log("Loooog 2");
-  }, [totalTodos]);
-
-  console.log("Log 3");
 
   const searchedTodos = todos.filter((todo) => {
     const todoText = todo.text.toLowerCase();

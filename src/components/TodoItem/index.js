@@ -1,20 +1,18 @@
-import CompleteIcon from "../TodoIcon";
-import DeleteIcon from "../TodoIcon";
+import React from "react";
+import TodoIcon from "../TodoIcon"; // Importa el componente TodoIcon
+
 import "./TodoItem.css";
 
 function TodoItem(props) {
   return (
     <li className="TodoItem">
-      <CompleteIcon
-        CompleteIcon={props.completed}
-        onComplete={props.onComplete}
-      />
+      <TodoIcon type="check" color="green" onClick={props.onComplete} />
 
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
 
-      <DeleteIcon onDelete={props.onDelete} />
+      <TodoIcon type="delete" color="red" onClick={props.onDelete} />
     </li>
   );
 }
